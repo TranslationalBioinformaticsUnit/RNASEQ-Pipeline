@@ -31,7 +31,7 @@ Option=$2
 #Get input direction
 Input_Dir=$3
 #Get output direction
-Ouput_Dir=$4
+Output_Dir=$4
 
 hostname >&2
 echo $0 >&2
@@ -42,7 +42,7 @@ date >&2
 if (( $Option == 1 )) 
 then
   # Run quality control of the original fastq using FastQC
-  /opt/FastQC/fastqc -o $Ouput_Dir/ -t 10 $Input_Dir/${FastqID}.fastq.gz
+  /opt/FastQC/fastqc -o $Output_Dir/ -t 10 $Input_Dir/${FastqID}.fastq.gz
 else
   #Quality Control del trimmed fastq
   /opt/FastQC/fastqc -o $Output_Dir/ -t 10 $Input_Dir/${FastqID}_trimmed.fastq
